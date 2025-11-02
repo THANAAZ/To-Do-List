@@ -1,0 +1,186 @@
+/* --- Color Palette & Font Variables --- */
+:root {
+    --color-peach: #FFE5B4;      /* Button/Accent */
+    --color-light-beige: #FFF8E7; /* Page Background */
+    --color-pale-beige: #FDF6F0; /* Card Background */
+    --color-text-dark: #333;
+    --color-text-muted: #888;
+    --color-border: #ddd;
+    --color-delete: #dc3545;     /* Clear/Delete Warning */
+    --color-success: #28a745;    /* Completed Checkmark */
+    
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--color-light-beige); 
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    margin: 0;
+}
+
+.todo-app {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Heading Font */
+h1 {
+    font-family: var(--font-heading);
+    text-align: center;
+    color: var(--color-text-dark);
+    margin-bottom: 5px; 
+    font-weight: 600; 
+}
+
+.tagline {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* --- Input Section --- */
+.input-container {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#taskInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+#addTaskBtn {
+    padding: 10px 15px;
+    border: 1px solid var(--color-peach);
+    background-color: var(--color-peach);
+    color: var(--color-text-dark);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-body); 
+}
+
+#addTaskBtn:hover {
+    background-color: #ffcd9a; 
+}
+
+/* --- Task List & Items --- */
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: var(--color-pale-beige);
+    border-radius: 5px;
+}
+
+.task-item.completed {
+    background: #f0f0f0;
+}
+
+.task-text {
+    flex-grow: 1;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+}
+
+/* Toggle Button (Floating Key) */
+.toggle-btn {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent; /* Hide checkmark initially */
+}
+
+.task-item.completed .toggle-btn {
+    background-color: var(--color-success); 
+    border-color: var(--color-success);
+    color: white; /* Show checkmark */
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--color-delete);
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* --- Filter & Clear Styles --- */
+.filters {
+    text-align: center;
+    margin-bottom: 10px; /* Reduced margin to separate from list */
+    padding: 8px;
+    border-radius: 5px;
+    background: var(--color-light-beige);
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    margin: 0 3px;
+    border: 1px solid var(--color-peach);
+    border-radius: 3px;
+    background: white;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+.filter-btn.active {
+    background: var(--color-peach);
+    font-weight: bold;
+}
+
+.clear-btn {
+    display: block; 
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px; /* Closely tied to the filter buttons */
+    margin-bottom: 15px;
+    border: 1px solid var(--color-delete);
+    background-color: white;
+    color: var(--color-delete);
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.clear-btn:hover {
+    background-color: var(--color-delete);
+    color: white;
+}
