@@ -1,6 +1,8 @@
 📝 To-Do List App
 A simple and functional To-Do List web app built with HTML5, CSS3, and JavaScript.
 
+
+
 Features
 ➕ Add new tasks
 ✅ Mark tasks as complete/incomplete
@@ -9,6 +11,9 @@ Features
 🔍 Filter by All / Active / Completed
 Folder Structure
 See main project layout in /todo-list-app/.
+
+
+
 
 How to Run
 Clone this repository
